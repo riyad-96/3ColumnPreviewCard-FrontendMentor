@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "Big-Shoulders-Display";
+  src: url("fonts/big-shoulders-display-v21-latin-700.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Lexend-Deca";
+  src: url("fonts/lexend-deca-v21-latin-700.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Lexend-Deca";
+  src: url("fonts/lexend-deca-v21-latin-400.woff2") format("woff2");
+  font-weight: 400;
+}
+
+
+:root {
+  /* ! Primary */
+  --brightOrange: hsl(31, 77%, 52%);
+  --darkCyan: hsl(184, 100%, 22%);
+  --veryDarkCyan: hsl(179, 100%, 13%);
+
+  /* ! Neutral */
+  /* ?  (paragraphs) */
+  --transparentWhite: hsla(0, 0%, 100%, 0.75);
+  /*? (background, headings, buttons) */
+  --veryLightGray: hsl(0, 0%, 95%);
+
+  --font: 15px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--veryLightGray);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  font-family: "Lexend-Deca";
+  font-weight: 400;
+  color: var(--transparentWhite);
+  font-size: var(--font);
+  padding: 2rem;
+  place-items: center;
+}
+
+.wrapper {
+  max-width: 925px;
+  width: 100%;
+  height: max-content;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.sedans {
+  background-color: var(--brightOrange);
+
+  & a {
+    text-decoration: none;
+    color: var(--brightOrange);
+    background-color: var(--veryLightGray);
+    width: fit-content;
+    padding: 0.85rem 2rem;
+    border: 2px solid var(--veryLightGray);
+    border-radius: 100px;
+
+    &:hover {
+      background-color: var(--brightOrange);
+      color: var(--veryLightGray);
+    }
+  }
+}
+
+.suvs {
+  background-color: var(--darkCyan);
+
+  & a {
+    text-decoration: none;
+    color: var(--darkCyan);
+    background-color: var(--veryLightGray);
+    width: fit-content;
+    padding: 0.85rem 2rem;
+    border: 2px solid var(--veryLightGray);
+    border-radius: 100px;
+
+    &:hover {
+      background-color: var(--darkCyan);
+      color: var(--veryLightGray);
+    }
+  }
+}
+
+.luxury {
+  background-color: var(--veryDarkCyan);
+
+  & a {
+    text-decoration: none;
+    color: var(--veryDarkCyan);
+    background-color: var(--veryLightGray);
+    width: fit-content;
+    padding: 0.85rem 2rem;
+    border: 2px solid var(--veryLightGray);
+    border-radius: 100px;
+
+    &:hover {
+      background-color: var(--veryDarkCyan);
+      color: var(--veryLightGray);
+    }
+  }
+}
+
+.box {
+  padding: 2.6rem 2.5rem;
+  display: grid;
+  gap: 6rem;
+  grid-template-rows: 1fr auto;
+}
+
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-family: "Big-Shoulders-Display";
+  font-weight: 700;
+  color: var(--veryLightGray);
+  font-size: 2.4rem;
+}
+
+.text_area {
+  display: grid;
+  gap: 2rem;
+}
+
+.text_area p {
+  line-height: 160%;
+  max-width: 24ch;
+}
+
+.attribution {
+  color: var(--veryLightGray);
+  justify-self: center;
+  padding: 0.7rem 1rem;
+  background: linear-gradient(to right, var(--brightOrange), var(--darkCyan), var(--veryDarkCyan));
+  border-radius: 100px;
+
+  & a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Lexend-Deca";
+    font-weight: 700;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  body{
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    overflow: initial;
+  }
+  .sedans{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .suvs{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .luxury{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+
+  .text_area{
+    gap: 1rem;
+  }
+  .box{
+    gap: 2rem;
+
+    & p{
+      max-width: 55ch;
+    }
+  }
+
+  .attribution {
+    background: var(--veryDarkCyan);
+    text-align: center;
+  }
+}
