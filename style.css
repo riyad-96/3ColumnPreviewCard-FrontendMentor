@@ -132,6 +132,10 @@ body {
   }
 }
 
+.sedans a, .suvs a, .luxury a{
+  transition: 0.25s;
+}
+
 .box {
   padding: 2.6rem 2.5rem;
   display: grid;
